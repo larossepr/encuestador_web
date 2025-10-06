@@ -60,7 +60,7 @@ with form.form(key=f"encuesta_form_{st.session_state.form_id}"):
     st.caption("Elija uno o mas lugares")
     orgs = ["Iglesia", "Grupo Deportivo", "Club", "Asociacion de Agricultores", "Asociacion de Comerciantes", "Asociacion de Ganaderos", "Otra"]
     organizacion = st.multiselect("Organizaciones a las que pertenece    || Elija una o mas organizaciones ||", orgs, placeholder="Elija una o mas organizaciones")
-    st.caption("Elija uno o mas organizaciones")
+    st.caption("Elija una o mas organizaciones")
     tierra = st.radio("Posee usted tierra?", ["Si", "No"], horizontal=True, index=1)
     vivienda = st.radio("Posee usted vivienda?", ["Si", "No"], horizontal=True, index=1)
     exitencia = st.radio(f"Sabia usted de la existencia del proyecto {proyecto}?", ["Si", "No"], horizontal=True, index=0)
