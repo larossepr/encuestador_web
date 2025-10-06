@@ -8,8 +8,8 @@ st.set_page_config(
 )
 st.title("🌿 Proyecto AMBI")
 st.subheader("Bienvenido al sistema de encuestas ambientales.")
-st.write("Por favor elija un nombre para crear la encuesta")
-nombre = st.text_input("Nombre: ").strip().lower()
+st.write("Por favor elija un nombre de proyecto para crear la encuesta")
+nombre = st.text_input("Nombre del Proyecto: ").strip().lower()
 crear = st.button("Crear encuesta", )
 if crear:
     if nombre:
