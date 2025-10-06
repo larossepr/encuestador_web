@@ -57,8 +57,10 @@ with form.form(key=f"encuesta_form_{st.session_state.form_id}"):
     sector_laboral = st.radio("Sector Laboral:", ["Publico", "Privado", "Independiente", "Desempleado"], horizontal=True)
     ocio = ["Bares", "Colmados", "Galleras", "Play", "Billar", "Playa o rio"]
     lugares_ocio = st.multiselect("Lugares que visita la gente en la comunidad para divertirse    || Elija uno o mas lugares ||", ocio, placeholder="Elija uno o mas lugares")
+    st.caption("Elija uno o mas lugares")
     orgs = ["Iglesia", "Grupo Deportivo", "Club", "Asociacion de Agricultores", "Asociacion de Comerciantes", "Asociacion de Ganaderos", "Otra"]
     organizacion = st.multiselect("Organizaciones a las que pertenece    || Elija una o mas organizaciones ||", orgs, placeholder="Elija una o mas organizaciones")
+    st.caption("Elija uno o mas organizaciones")
     tierra = st.radio("Posee usted tierra?", ["Si", "No"], horizontal=True, index=1)
     vivienda = st.radio("Posee usted vivienda?", ["Si", "No"], horizontal=True, index=1)
     exitencia = st.radio(f"Sabia usted de la existencia del proyecto {proyecto}?", ["Si", "No"], horizontal=True, index=0)
@@ -82,7 +84,7 @@ with form.form(key=f"encuesta_form_{st.session_state.form_id}"):
     st.write("Podria darnos su nombre y direccion?")
     nombre_completo = st.text_input("Nombre Completo: ")
     direccion = st.text_input("Direccion: ")
-
+    st.caption("Al pulsar Enviar Encuesta el formulario se reiniciara para que otra persona pueda tomar la encuesta, si nadie mas va a tomarla no hace falta volver a enviarla.")
     submitted = st.form_submit_button("Enviar Encuesta")
 
 
