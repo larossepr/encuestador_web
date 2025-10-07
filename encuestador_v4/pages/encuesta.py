@@ -16,7 +16,8 @@ if "nombre_del_proyecto" not in st.session_state:
     st.switch_page("main.py")
 proyecto = st.session_state["nombre_del_proyecto"].title()
 nombre = st.session_state["nombre_del_proyecto"]
-
+#ruta a guardar el csv
+encuesta = f"{nombre}_encuesta.csv"
 # Titulo y Subtitulo
 st.title(f"Analisis de Interesados del proyecto {proyecto}")
 st.subheader("Por favor, contesta las siguientes preguntas.")
@@ -97,8 +98,7 @@ if submitted:
         "Reside en la Comunidad": reside,
         "Viene por Temporada": temporada
     }
-    #ruta a guardar el csv
-    encuesta = f"{nombre}_encuesta.csv"
+    
     #convertir las respuestas del formulario a DataFrame
     df = pd.DataFrame([datos_encuesta])
     #pasar el DataFrame a CSV y anadir las respuestas sin borrar nada de lo existente
@@ -108,4 +108,16 @@ if submitted:
     time.sleep(5)
     form.empty()
     st.rerun()
+st.markdown("---")
+    #boton para descargar los datos //Beta//
+with open(encuesta, "r", encoding="utf-8") as file:
+    csv_data = file.read().encode("utf-8")
+if st.button("Descargar Resultados en CSV"):
+    st.download_button(
+    label="Pulsa para confirmar descarga",
+    data=csv_data,
+    file_name=f"{nombre}_resultados_de_analisis_de interesados.csv",
+    mime="text/csv"
+    )
+
     
