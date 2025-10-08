@@ -26,7 +26,7 @@ form = st.empty()
 with form.form("Analisis de interesados"):
     genero = st.radio("Genero:", ["Masculino", "Femenino"], horizontal=True)
     edad = st.radio("Edad:", ["<18", "18-25", "26-35", "36-45", "46-60", "60+"], horizontal=True)
-    estado_civil = st.radio("Estado Civil:", ["Soltero", "Casado", "Divorciado", "Viudo"], horizontal=True)
+    estado_civil = st.radio("Estado Civil:", ["Soltero", "Casado", "Divorciado", "Viudo", "Union Libre"], horizontal=True)
     nivel_educativo = st.radio("Nivel Educativo:", ["Basico", "Intermedio", "Bachiller", "Superior"], horizontal=True)
     profesion = st.text_input("Profesion :")
     sector_laboral = st.radio("Sector Laboral:", ["Publico", "Privado", "Independiente", "Desempleado"], horizontal=True)
